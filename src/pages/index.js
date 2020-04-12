@@ -18,7 +18,7 @@ const App = () => {
     draw();
   }, [data, theme]);
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     setLoading(true);
@@ -26,7 +26,7 @@ const App = () => {
     setData(null);
 
     fetchData(username)
-      .then(data => {
+      .then((data) => {
         setLoading(false);
 
         if (data.years.length === 0) {
@@ -36,23 +36,23 @@ const App = () => {
           inputRef.current.blur();
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         setLoading(false);
         setError("I could not check your profile successfully...");
       });
   };
 
-  const handleChangeTheme = themeName => {
+  const handleChangeTheme = (themeName) => {
     setTheme(themeName);
   };
 
-  const onDownload = e => {
+  const onDownload = (e) => {
     e.preventDefault();
     download(canvasRef.current);
   };
 
-  const onShareTwitter = e => {
+  const onShareTwitter = (e) => {
     e.preventDefault();
     uploadToTwitter(canvasRef.current);
   };
@@ -69,7 +69,7 @@ const App = () => {
       data,
       username: username,
       themeName: theme,
-      footerText: "Made by @sallar & friends - github-contributions.now.sh"
+      footerText: "Made by @sallar & friends - github-contributions.now.sh",
     });
   };
 
@@ -135,8 +135,8 @@ const App = () => {
       <form onSubmit={handleSubmit}>
         <input
           ref={inputRef}
-          placeholder="Your GitHub Username"
-          onChange={e => setUsername(e.target.value)}
+          placeholder="Your GitLab Username"
+          onChange={(e) => setUsername(e.target.value)}
           value={username}
           id="username"
           autoFocus
@@ -162,29 +162,22 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <h5 className="Fork-label">
+          {`This project is a fork of `}
+          <a href="github-contributions.now.sh">@sallar's github project</a>
+        </h5>
+
         <div className="App-logo">
-          <img src="/tentocats.jpg" width={200} alt="Tentocats" />
-          <h1>GitHub Contributions Chart Generator</h1>
-          <h4>All your contributions in one image!</h4>
+          <img src="/GitLab_Logo.png" width={150} alt="GitLabLogo" />
+          <h1>GitLab Contributions Chart Generator</h1>
+          <h4>All your public contributions in one image!</h4>
         </div>
         {_renderForm()}
         <ThemeSelector
           currentTheme={theme}
-          onChangeTheme={themeName => setTheme(themeName)}
+          onChangeTheme={(themeName) => setTheme(themeName)}
         />
-        {_renderGithubButton()}
-        <footer>
-          <p>
-            Not affiliated with GitHub Inc. Octocat illustration made by{" "}
-            <a
-              href="https://octodex.github.com/tentocat/"
-              rel="noopener nofollow"
-            >
-              GitHub design team
-            </a>
-            .
-          </p>
-        </footer>
+        <footer>{_renderGithubButton()}</footer>
       </header>
       <section className="App-content">
         {loading && _renderLoading()}

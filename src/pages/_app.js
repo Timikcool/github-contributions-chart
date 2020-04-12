@@ -7,10 +7,10 @@ import Head from "next/head";
 export default ({ Component, pageProps }) => (
   <>
     <Head>
-      <title>GitHub Contributions Chart Generator</title>
+      <title>GitLab Contributions Chart Generator</title>
       <meta
         name="description"
-        content="See all of your GitHub contributions in one image!"
+        content="See all of your GitLab public contributions in one image!"
       />
     </Head>
     <Component {...pageProps} />

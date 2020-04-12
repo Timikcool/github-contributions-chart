@@ -12,6 +12,13 @@
   overflow-y: scroll;
 }
 
+.Fork-label {
+  text-align: center;
+  background: #cfd0d4;
+  /* color: white; */
+  border-radius: 0.4em;
+}
+
 .App-content {
   overflow-y: scroll;
   padding: 1rem;
