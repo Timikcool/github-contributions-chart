@@ -68,6 +68,7 @@ const App = () => {
     drawContributions(canvasRef.current, {
       data,
       username: username,
+      headerText: `@${username} on GitLab`,
       themeName: theme,
       footerText: "Made by @sallar & friends - github-contributions.now.sh",
     });
