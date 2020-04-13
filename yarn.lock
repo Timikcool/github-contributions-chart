@@ -2606,10 +2606,9 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-github-contributions-canvas@^0.3.0:
+"github-contributions-canvas@https://github.com/Timikcool/github-contributions-canvas/tarball/9fee49ba92831c6446887463d31b70713d3e0db2":
   version "0.3.0"
-  resolved "https://registry.yarnpkg.com/github-contributions-canvas/-/github-contributions-canvas-0.3.0.tgz#77d8bb6d9fc7c58e12f427a7932efb005f739aa6"
-  integrity sha512-0B4ZoKNEFLT0Bofx5HYi2MZtFDQFZ5BCDn28S0BHyz3wFyon9cjejfzCyy4ocMq92K3XhuGMtlhYktb+IJc4Ww==
+  resolved "https://github.com/Timikcool/github-contributions-canvas/tarball/9fee49ba92831c6446887463d31b70713d3e0db2#4b2af8da09c776b427326b2da26fe1a51c4e4805"
   dependencies:
     moment "^2.22.1"
 
